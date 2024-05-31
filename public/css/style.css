@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(66, 66, 66);
+}
+
+.ranking {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.tables {
+    padding-left: 20%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5%; /* Adiciona um espaço entre as tabelas */
+}
+
+.table-container {
+    flex: 1;
+}
+
+.title {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title img.title-logo-red {
+    width: 25%; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-right: 10px; /* Ajuste o espaço conforme necessário */
+}
+
+.title img.title-logo-orange {
+    width: 45%; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-top: 5%;
+}
+
+.title.red {
+    background-color: red;
+}
+
+.title.orange {
+    background-color: orange;
+    width: 50%;
+}
+
+.table {
+    padding: 10px;
+}
+
+.table.red {
+    background-color: #f8d7da;
+}
+
+.table.orange {
+    background-color: #fff3cd;
+    width: 50%;
+}
+
+.table .row {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.table .row .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.table .row .details {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.table .row .stars, .table .row .recommendations {
+    display: flex;
+}
+
+.table .row .recommendations {
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px; /* Ajuste conforme necessário */
+    margin-bottom: 30px; /* Ajuste conforme necessário */
+}
+
+.table .row .star {
+    width: 40px;
+    height: 40px;
+    background: gray;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.table .row .star.filled {
+    background: gold;
+}
