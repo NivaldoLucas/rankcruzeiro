@@ -41,9 +41,9 @@
                     @foreach($customers as $customer)
                         <div class="row">
                             <div class="recommendations">
-                                @for ($i = 1; $i <= $customer->recommendations; $i++)
-                                    <span class="star filled"></span>
-                                @endfor
+                                <span class="star {{ $customer->referral_1 ? 'filled' : '' }}"></span>
+                                <span class="star {{ $customer->referral_2 ? 'filled' : '' }}"></span>
+                                <span class="star {{ $customer->referral_3 ? 'filled' : '' }}"></span>
                             </div>
                         </div>
                     @endforeach

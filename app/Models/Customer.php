@@ -15,6 +15,8 @@ class Customer extends Model
         'logo_url',
         'dobrou_mes1',
         'dobrou_mes2',
-        'recommendations',
+        'referral_1',
+        'referral_2',
+        'referral_3',
     ];
 }
