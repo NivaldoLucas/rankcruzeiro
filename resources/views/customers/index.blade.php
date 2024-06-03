@@ -18,7 +18,7 @@
                     @foreach($customers as $customer)
                         <div class="row">
                             <div class="logo">
-                                <img src="{{ $customer->logo_url }}" alt="Logo da Loja">
+                                <img src="{{ Storage::url($customer->logo_url) }}" alt="Logo da Loja">
                             </div>
                             <div class="details">
                                 <h2>{{ $customer->store_name }}</h2>
