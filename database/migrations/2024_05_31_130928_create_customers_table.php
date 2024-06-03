@@ -13,7 +13,7 @@ return new class extends Migration
         $table->id();
         $table->string('store_name');
         $table->string('store_owner');
-        $table->string('logo_url');
+        $table->string('logo_url')->nullable();
         for ($i = 1; $i <= 2; $i++) {
             $table->boolean('dobrou_mes' . $i)->default(false);
         }
