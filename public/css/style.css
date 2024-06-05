@@ -5,11 +5,11 @@ body {
 
 .ranking {
     width: 90%;
-    margin: 0 auto;
+    margin-top: 40px;
+    margin-left: 10%;
 }
 
 .tables {
-    padding-left: 20%;
     display: flex;
     justify-content: space-between;
     gap: 5%; /* Adiciona um espaço entre as tabelas */
@@ -78,7 +78,7 @@ body {
 
 .table .row .details {
     flex: 1;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .table .row .stars, .table .row .recommendations {

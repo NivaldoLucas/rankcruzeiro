@@ -50,6 +50,7 @@
         </table>
         <br>
         <a class="button" href="{{ route('admin.customers.create') }}">Adicionar Novo Cliente</a>
+        <a class="button" href="{{ url('/') }}">Painel Mentorado</a>
     </div>
 </body>
 </html>
