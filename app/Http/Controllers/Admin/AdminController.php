@@ -33,7 +33,7 @@ class AdminController extends Controller
         'referral_3' => 'boolean',
     ]);
 
-    $logoPath = '/logos/default.png';
+    $logoPath = 'logos/default.png';
     if ($request->hasFile('logo')) {
         try {
             $logoPath = $request->file('logo')->store('logos', 'public');

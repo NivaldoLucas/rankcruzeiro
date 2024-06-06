@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking de Clientes</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
+    @extends('layouts.app')
+
+    @section('title', 'Customers')
+
+    @section('content')
     <div class="ranking">
         <div class="tables">
-            <div class="table-container">
+            <div class="table-container-red">
                 <div class="title red">
                     <img src="{{ asset('images/G30.png') }}" alt="Logo" class="title-logo-red">
                     <h1>DOBRARAM AS VENDAS</h1>
@@ -32,7 +28,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="table-container">
+            <div class="table-container-orange">
                 <div class="title orange">
                     <img src="{{ asset('images/G30ABORDO.png') }}" alt="Logo" class="title-logo-orange">
                     
@@ -51,5 +47,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+@endsection
