@@ -1,5 +1,4 @@
 <h1>Ranking de Clientes</h1>
-<hr>
 <p>configurate .env</p>
 <hr>
 <p> Create a folder "logos" in storage/app/public/</p>

@@ -24,6 +24,7 @@ body {
     margin-top: 20px;
 }
 
+
 .header-panel .btn {
     background-color: #910a0a;
     font-family: Akira;
@@ -37,9 +38,35 @@ body {
 
 }
 
+.header-panel a {
+    text-decoration: none;
+    color: white;
+}
+
 .header-panel .btn:hover {
     color: black;
     background-color: #fb8601;
+}
+
+.loginform {
+    color: white;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.btnlogin {
+    font-family: akira;
+    color: #ffffff;
+    background-color: #910a0a;
+    border: 0px;
+    border-radius: 10%;
+    font-size: large;
+    padding: 1%;
+}
+
+.btnlogin:hover {
+    background-color: #fb8601;
+    color: black;
 }
 
 .ranking {
