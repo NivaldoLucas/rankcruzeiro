@@ -18,7 +18,7 @@
             <div class="title">
                 <h1>G30 a Bordo</h1>
             </div>
-            <button class="btn">Area CS</button>
+            <a class="btn" href="{{ url('/login') }}">Area CS</a>
         </div>
     </header>
 

@@ -1,8 +1,8 @@
-    @extends('layouts.app')
+@extends('layouts.app')
 
-    @section('title', 'Customers')
+@section('title', 'Customers')
 
-    @section('content')
+@section('content')
     <div class="ranking">
         <div class="tables">
             <div class="table-container-red">

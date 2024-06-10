@@ -15,6 +15,11 @@ class AdminController extends Controller
         return view('admin.customers.index', compact('customers'));
     }
 
+    public function login()
+    {
+        return view('admin.customers.login');
+    }
+
     public function create()
     {
         return view('admin.customers.create');

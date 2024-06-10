@@ -1,6 +1,6 @@
 <h1>Ranking de Clientes</h1>
-<p> .env configurations.</p>
-<br>
+<p>configurate .env</p>
+<hr>
 <p> Create a folder "logos" in storage/app/public/</p>
 <p>chmod -R 775 storage</p>
 <p>chmod -R 775 storage/app/public/logos</p>
