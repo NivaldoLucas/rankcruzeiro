@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="centered-title">RANK CRUZEIRO</h1>
+        <h1 class="centered-title">RANKING CRUZEIRO</h1>
         <table class="customers-table" border="1">
             <thead>
                 <tr>
