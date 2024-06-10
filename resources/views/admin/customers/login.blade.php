@@ -21,7 +21,7 @@
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        if (username === 'admin' && password === 'teste') {
+        if (username === 'admin' && password === 'cruzeiro') {
             window.location.href = '/admin/customers';
         } else {
             alert('Credenciais incorretas, tente novamente');
