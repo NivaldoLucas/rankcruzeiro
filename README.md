@@ -10,3 +10,10 @@
 <br>
 <p>php artisan migrate</p>
 <p>php artisan db:seed --class=CustomersTableSeeder</p>
+<br>
+<h3>Enable Hosts</h3>
+<p>Create a Sites-Enable/ laravel.conf</p>
+<p>a2dissite 000-default</p>
+<p>a2ensite laravel.conf</p>
+<br>
+<p>sudo apt-get install php8.2-mysql</p>
