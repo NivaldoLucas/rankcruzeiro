@@ -117,13 +117,13 @@ body {
 
 .title.red {
     background-color: #bd0b0b;
-    height: 25%;
+    height: 200px;
     font-size: larger;
 }
 
 .title.orange {
     background-color: #fb8601;
-    height: 25%;
+    height: 200px;
 }
 
 .table {
