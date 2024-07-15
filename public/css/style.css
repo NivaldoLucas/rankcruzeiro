@@ -134,6 +134,10 @@ body {
     background-color: #f8d7da;
 }
 
+.position{
+    padding-right: 15px;
+}
+
 .table.orange {
     background-color: #fff3cd;
     /* width: 50%; */

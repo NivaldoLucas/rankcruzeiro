@@ -13,6 +13,9 @@
                 <div class="table red">
                     @foreach($customers as $customer)
                         <div class="row">
+                            <div class="position">
+                            <h2>{{ $loop->iteration }}°</h2>
+                            </div>
                             <div class="logo">
                                 <img src="{{ Storage::url($customer->logo_url) }}" alt="Logo da Loja">
                             </div>
