@@ -91,9 +91,9 @@ body {
 }
 
 
-.table-container-orange {
-    width: 55%;
-}
+/* .table-container-orange {
+    width: 35%;
+} */
 
 .title {
     padding: 10px;
@@ -111,8 +111,7 @@ body {
 }
 
 .title img.title-logo-orange {
-    width: 50%;
-    /* max-width: 40%; */
+    max-width: 40%;
 }
 
 .title.red {
