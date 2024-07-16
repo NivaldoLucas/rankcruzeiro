@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\Navigator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -22,82 +23,88 @@ class AdminCustomerController extends Controller
 
     public function create()
     {
-        return view('admin.customers.create');
+        $navigators = Navigator::all();
+        return view('admin.customers.create', compact('navigators'));
     }
 
     public function store(Request $request)
     {
-    $request->validate([
-        'store_name' => 'required|string|max:255',
-        'store_owner' => 'required|string|max:255',
-        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'dobrou_mes1' => 'boolean',
-        'dobrou_mes2' => 'boolean',
-        'referral_1' => 'boolean',
-        'referral_2' => 'boolean',
-        'referral_3' => 'boolean',
-    ]);
+        $request->validate([
+            'store_name' => 'required|string|max:255',
+            'store_owner' => 'required|string|max:255',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'dobrou_mes1' => 'boolean',
+            'dobrou_mes2' => 'boolean',
+            'referral_1' => 'boolean',
+            'referral_2' => 'boolean',
+            'referral_3' => 'boolean',
+            'navigator_id' => 'required|exists:navigators,id',
+        ]);
 
-    $logoPath = 'logos/default.png';
-    if ($request->hasFile('logo')) {
-        try {
-            $logoPath = $request->file('logo')->store('logos', 'public');
-        } catch (\Exception $e) {
-            return back()->withErrors(['logo' => 'Falha ao fazer upload da imagem: ' . $e->getMessage()]);
+        $logoPath = 'logos/default.png';
+        if ($request->hasFile('logo')) {
+            try {
+                $logoPath = $request->file('logo')->store('logos', 'public');
+            } catch (\Exception $e) {
+                return back()->withErrors(['logo' => 'Falha ao fazer upload da imagem: ' . $e->getMessage()]);
+            }
         }
-    }
 
-    Customer::create([
-        'store_name' => $request->store_name,
-        'store_owner' => $request->store_owner,
-        'logo_url' => $logoPath,
-        'dobrou_mes1' => $request->boolean('dobrou_mes1'),
-        'dobrou_mes2' => $request->boolean('dobrou_mes2'),
-        'referral_1' => $request->boolean('referral_1'),
-        'referral_2' => $request->boolean('referral_2'),
-        'referral_3' => $request->boolean('referral_3'),
-    ]);
+        Customer::create([
+            'store_name' => $request->store_name,
+            'store_owner' => $request->store_owner,
+            'logo_url' => $logoPath,
+            'dobrou_mes1' => $request->boolean('dobrou_mes1'),
+            'dobrou_mes2' => $request->boolean('dobrou_mes2'),
+            'referral_1' => $request->boolean('referral_1'),
+            'referral_2' => $request->boolean('referral_2'),
+            'referral_3' => $request->boolean('referral_3'),
+            'navigator_id' => $request->navigator_id,
+        ]);
 
-    return redirect()->route('admin.customers.index')->with('success', 'Cliente criado com sucesso.');
+        return redirect()->route('admin.customers.index')->with('success', 'Cliente criado com sucesso.');
     }
 
     public function edit(Customer $customer)
     {
-        return view('admin.customers.edit', compact('customer'));
+        $navigators = Navigator::all();
+        return view('admin.customers.edit', compact('customer', 'navigators'));
     }
 
     public function update(Request $request, Customer $customer)
     {
-    $request->validate([
-        'store_name' => 'required|string|max:255',
-        'store_owner' => 'required|string|max:255',
-        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'dobrou_mes1' => 'boolean',
-        'dobrou_mes2' => 'boolean',
-        'referral_1' => 'boolean',
-        'referral_2' => 'boolean',
-        'referral_3' => 'boolean',
-    ]);
+        $request->validate([
+            'store_name' => 'required|string|max:255',
+            'store_owner' => 'required|string|max:255',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'dobrou_mes1' => 'boolean',
+            'dobrou_mes2' => 'boolean',
+            'referral_1' => 'boolean',
+            'referral_2' => 'boolean',
+            'referral_3' => 'boolean',
+            'navigator_id' => 'required|exists:navigators,id',
+        ]);
 
-    if ($request->hasFile('logo')) {
-        if ($customer->logo_url) {
-            Storage::delete('public/' . $customer->logo_url);
+        if ($request->hasFile('logo')) {
+            if ($customer->logo_url) {
+                Storage::delete('public/' . $customer->logo_url);
+            }
+            $logoPath = $request->file('logo')->store('logos', 'public');
+            $customer->logo_url = $logoPath;
         }
-        $logoPath = $request->file('logo')->store('logos', 'public');
-        $customer->logo_url = $logoPath;
-    }
 
-    $customer->update([
-        'store_name' => $request->store_name,
-        'store_owner' => $request->store_owner,
-        'dobrou_mes1' => $request->boolean('dobrou_mes1'),
-        'dobrou_mes2' => $request->boolean('dobrou_mes2'),
-        'referral_1' => $request->boolean('referral_1'),
-        'referral_2' => $request->boolean('referral_2'),
-        'referral_3' => $request->boolean('referral_3'),
-    ]);
+        $customer->update([
+            'store_name' => $request->store_name,
+            'store_owner' => $request->store_owner,
+            'dobrou_mes1' => $request->boolean('dobrou_mes1'),
+            'dobrou_mes2' => $request->boolean('dobrou_mes2'),
+            'referral_1' => $request->boolean('referral_1'),
+            'referral_2' => $request->boolean('referral_2'),
+            'referral_3' => $request->boolean('referral_3'),
+            'navigator_id' => $request->navigator_id,
+        ]);
 
-    return redirect()->route('admin.customers.index')->with('success', 'Cliente atualizado com sucesso.');
+        return redirect()->route('admin.customers.index')->with('success', 'Cliente atualizado com sucesso.');
     }
 
     public function destroy(Customer $customer)
