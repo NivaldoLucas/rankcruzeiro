@@ -23,6 +23,11 @@
                                 <h2>{{ $customer->store_name }}</h2>
                                 <p>{{ $customer->store_owner }}</p>
                             </div>
+                            <div class="navigator-photo">
+                                @if($customer->navigator && $customer->navigator->photo)
+                                    <img src="{{ Storage::url($customer->navigator->photo) }}" alt="Foto do Navegador" class="navigator-photo">
+                                @endif
+                            </div>
                             <div class="stars">
                                 <span class="star {{ $customer->dobrou_mes1 ? 'filled' : '' }}"></span>
                                 <span class="star {{ $customer->dobrou_mes2 ? 'filled' : '' }}"></span>

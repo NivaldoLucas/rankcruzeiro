@@ -7,7 +7,7 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class AdminController extends Controller
+class AdminCustomerController extends Controller
 {
     public function index()
     {

@@ -48,6 +48,7 @@
                 <input type="checkbox" id="referral_3" name="referral_3" value="1" {{ $customer->referral_3 ? 'checked' : '' }}>
             </div>
             <button type="submit">Salvar</button>
+            <a class="button" href="{{ route('admin.customers.index') }}">Cancelar</a>
         </form>
     </div>
 </body>

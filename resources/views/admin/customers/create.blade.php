@@ -43,7 +43,8 @@
                 <label for="referral_3">Referral 3:</label>
                 <input type="checkbox" id="referral_3" name="referral_3" value="1">
             </div>
-            <button type="submit">Salvar</button>
+            <button type="submit">Criar</button>
+            <a class="button" href="{{ route('admin.customers.index') }}">Voltar</a>
         </form>
     </div>
 </body>
