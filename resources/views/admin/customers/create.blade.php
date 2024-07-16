@@ -24,7 +24,7 @@
                 <input type="file" id="logo" name="logo">
             </div>
             <div class="form-group">
-                <label for="navigator_id">Navigator</label>
+                <label for="navigator_id">Navegador</label>
                 <select name="navigator_id" id="navigator_id" class="form-control" required>
                     @foreach($navigators as $navigator)
                         <option value="{{ $navigator->id }}" {{ $customer->navigator_id == $navigator->id ? 'selected' : '' }}>{{ $navigator->name }}</option>

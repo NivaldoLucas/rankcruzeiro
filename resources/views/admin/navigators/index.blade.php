@@ -23,7 +23,7 @@
                 <tr>
                     <td><img src="{{ Storage::url($navigator->photo) }}" alt="{{ $navigator->name }}" width="50"></td>
                     <td>{{ $navigator->name }}</td>
-                    <td>{{ $navigator->lions ? 'Yes' : 'No' }}</td>
+                    <td><img src="{{ $navigator->lions ? asset('images/LOGO-LIONS.png') : asset('images/LOGO-G30.png') }}" alt="{{ $navigator->lions ? 'Yes' : 'No' }}" width="50"></td>
                     <td>
                         <a class="button" href="{{ route('admin.navigators.edit', $navigator->id) }}">Editar</a>
                         <form action="{{ route('admin.navigators.destroy', $navigator->id) }}" method="POST" style="display:inline;">
