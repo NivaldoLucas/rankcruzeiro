@@ -27,6 +27,14 @@
                     <img src="{{ Storage::url($customer->logo_url) }}" alt="Logo da Loja" width="100">
                 @endif
             </div>
+            <div class="form-group">
+                <label for="navigator_id">Navigator</label>
+                <select name="navigator_id" id="navigator_id" class="form-control" required>
+                    @foreach($navigators as $navigator)
+                        <option value="{{ $navigator->id }}" {{ $customer->navigator_id == $navigator->id ? 'selected' : '' }}>{{ $navigator->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <div>
                 <label for="dobrou_mes1">Dobrou Mês 1:</label>
                 <input type="checkbox" id="dobrou_mes1" name="dobrou_mes1" value="1" {{ $customer->dobrou_mes1 ? 'checked' : '' }}>
@@ -48,6 +56,7 @@
                 <input type="checkbox" id="referral_3" name="referral_3" value="1" {{ $customer->referral_3 ? 'checked' : '' }}>
             </div>
             <button type="submit">Salvar</button>
+            <a class="button" href="{{ route('admin.customers.index') }}">Cancelar</a>
         </form>
     </div>
 </body>

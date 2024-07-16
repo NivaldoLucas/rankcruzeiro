@@ -20,6 +20,7 @@
                     <th>Indicou 1</th>
                     <th>Indicou 2</th>
                     <th>Indicou 3</th>
+                    <th>Navegador</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -37,6 +38,11 @@
                         <td>{{ $customer->referral_2 }}</td>
                         <td>{{ $customer->referral_3 }}</td>
                         <td>
+                            @if($customer->navigator && $customer->navigator->photo)
+                                <img src="{{ Storage::url($customer->navigator->photo) }}" alt="Foto do Navegador" width="50">
+                            @endif
+                        </td>
+                        <td>
                             <a class="button" href="{{ route('admin.customers.edit', $customer->id) }}">Editar</a>
                             <form action="{{ route('admin.customers.destroy', $customer->id) }}" method="POST" style="display:inline;">
                                 @csrf
@@ -50,7 +56,8 @@
         </table>
         <br>
         <a class="button" href="{{ route('admin.customers.create') }}">Adicionar Novo Cliente</a>
-        <a class="button" href="{{ url('/') }}">Painel Mentorado</a>
+        <a class="button" href="{{ url('/') }}">Painel Cruzeiro</a>
+        <a class="button" href="{{ url('/admin/navigators') }}">Painel Navegadores</a>
     </div>
 </body>
 </html>

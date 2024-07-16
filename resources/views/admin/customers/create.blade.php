@@ -23,6 +23,14 @@
                 <label for="logo">Logo da Loja:</label>
                 <input type="file" id="logo" name="logo">
             </div>
+            <div class="form-group">
+                <label for="navigator_id">Navigator</label>
+                <select name="navigator_id" id="navigator_id" class="form-control" required>
+                    @foreach($navigators as $navigator)
+                        <option value="{{ $navigator->id }}" {{ $customer->navigator_id == $navigator->id ? 'selected' : '' }}>{{ $navigator->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <div>
                 <label for="dobrou_mes1">Dobrou Mês 1:</label>
                 <input type="checkbox" id="dobrou_mes1" name="dobrou_mes1" value="1">
@@ -43,7 +51,8 @@
                 <label for="referral_3">Referral 3:</label>
                 <input type="checkbox" id="referral_3" name="referral_3" value="1">
             </div>
-            <button type="submit">Salvar</button>
+            <button type="submit">Criar</button>
+            <a class="button" href="{{ route('admin.customers.index') }}">Voltar</a>
         </form>
     </div>
 </body>
